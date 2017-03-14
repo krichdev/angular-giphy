@@ -12,10 +12,14 @@ app.controller('gifSearch', ['$scope', '$http', function($scope, $http){
       }
 
       $http(req).then(function success(res){
-           $scope.gifs = res.data.data;
+           $scope.gifs = res.data.data
       }, function error(req){
         console.log("There was an error");
       })
     });
+
+  $scope.myPagingFunction = function (){
+       $scope.watch();
+  };
 
 }]);
